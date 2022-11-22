@@ -1,0 +1,7 @@
+.DS_Store
+
+                 // folderi koji se nece vidjeti na gitu
+obj/**
+tools/**
+bin/**
+.vscode/**
