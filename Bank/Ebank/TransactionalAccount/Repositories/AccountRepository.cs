@@ -26,8 +26,8 @@ public class AccountRepository: IAccountRepository{
     public async Task<List<CurrentAccountModel>> GetAccountByJMBG(String embg){
 
         using(IDbConnection conn = _daperUtil.CreateConnection){
-            string query = $" Select dbo.brojracuna (530,partija) as BrojRac, sostojba as Stanje,partija as Partija from ITS where status = 2 and embg = '{embg}'";
-
+            // string query = $" Select dbo.brojracuna (530,partija) as BrojRac, sostojba as Stanje,partija as Partija from ITS where status = 2 and embg = '{embg}'";
+               string query = $" Select dbo.brojracuna (530,partija) as BrojRac, sostojba as Stanje,partija as Partija,dotvaranje as DatumOtvaranja,dposuplata as DatumPoslednjeUplate,kamgrupa as Kamata,dposplata as DatumPoslednjePlate,posplata as IznosPoslednjePlate from ITS where status = 2 and embg = '{embg}'";
             List<CurrentAccountModel> currentAccountModels = (await conn.QueryAsync<CurrentAccountModel>(sql: query)).ToList();
             return currentAccountModels;
 

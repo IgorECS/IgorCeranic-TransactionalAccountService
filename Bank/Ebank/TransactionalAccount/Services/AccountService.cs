@@ -55,6 +55,11 @@ public class AccountService : IAccountService
             
                 currentAccountDTOTest.BrojRac = account.BrojRac;
                 currentAccountDTOTest.Stanje = account.Stanje;
+                currentAccountDTOTest.DatumOtvaranja = account.DatumOtvaranja;
+                currentAccountDTOTest.DatumPolsednjeUplate = account.DatumPolsednjeUplate;
+                currentAccountDTOTest.Kamata = account.Kamata;
+                currentAccountDTOTest.DatumPoslednjePlate = account.DatumPoslednjePlate;
+                currentAccountDTOTest.IznosPoslednjePlate = account.IznosPoslednjePlate;
                 currentAccountDTOTest.Cards = await _CardRepo.GetCards(account.Partija);
                 currentAccountDTOTest.Transactions = await _TransactionRepo.GetTransactions(account.Partija);
                 currentAccountDTOTest.Reservations = await _ReservationRepo.GetReservations(account.Partija);
@@ -76,7 +81,7 @@ public class AccountService : IAccountService
         }
 
 
-
+//-----------------------------------------------------------------------------------------------------------------------
 
 
 
